@@ -13,14 +13,14 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const savedName = localStorage.getItem("name");
-    
+
     if (savedName) {
       setName(savedName);
     }
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.container}>
       <Logo />
       <LinksGroup />
       <User userName={name} />
