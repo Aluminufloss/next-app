@@ -1,22 +1,11 @@
-"use client"
+"use client";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import logo from '@/assets/logo.png';
-
-import styles from '@/styles/components/header.module.scss';
+import logo from "@/assets/logo.png";
 
 const Logo: React.FC = () => {
-  return (
-    <div className={styles.logo}>
-      <Image
-        src={logo}
-        alt="logo"
-        width={142}
-        height={24}
-      />
-    </div>
-  )
-}
+  return <Image src={logo} alt="logo" width={142} height={24} />;
+};
 
 export default Logo;
