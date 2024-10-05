@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 
-const useStore = create((set) => ({
+import { StoreInterface } from './models/StoreInterface';
+
+const useStore = create<StoreInterface>((set) => ({
   name: '',
   setName: (newName: string) => set({ name: newName }),
 }));
