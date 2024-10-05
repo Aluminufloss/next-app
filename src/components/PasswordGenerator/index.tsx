@@ -6,6 +6,11 @@ import generatePasswordsArray from "@/utils/generatePasswordsArray";
 
 import styles from "@/styles/components/passwordGeneratorForm.module.scss";
 
+import Title from "../Title";
+import Checkbox from "./Checkbox";
+
+import Copy from '@/assets/svg/copy.svg';
+
 const PasswordGeneratorForm: React.FC = () => {
   const [length, setLength] = useState<number>(8);
   const [useUppercase, setUseUppercase] = useState<boolean>(true);
@@ -30,12 +35,11 @@ const PasswordGeneratorForm: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Генератор паролей</h1>
-
+    <>
+      <Title text="Генератор паролей" />
       <div className={styles.form}>
         <div className={styles.settings}>
-          <label className={styles.label}>Длина пароля</label>
+          <span className={styles.label}>Длина пароля</span>
           <input
             type="number"
             value={length}
@@ -46,46 +50,34 @@ const PasswordGeneratorForm: React.FC = () => {
           />
 
           <div className={styles.checkboxes}>
-            <label>
-              <input
-                type="checkbox"
-                checked={useUppercase}
-                onChange={(e) => setUseUppercase(e.target.checked)}
-              />
-              Использовать прописные буквы
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={useLowercase}
-                onChange={(e) => setUseLowercase(e.target.checked)}
-              />
-              Использовать строчные буквы
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={useNumbers}
-                onChange={(e) => setUseNumbers(e.target.checked)}
-              />
-              Использовать цифры
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={useSymbols}
-                onChange={(e) => setUseSymbols(e.target.checked)}
-              />
-              Использовать символы: %, *, ), ?, @, #, $, ~
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={avoidRepetition}
-                onChange={(e) => setAvoidRepetition(e.target.checked)}
-              />
-              Избегать повторения символов
-            </label>
+            <Checkbox
+              flag={useUppercase}
+              text="Использовать прописные буквы"
+              onChange={(e) => setUseUppercase(e.target.checked)}
+            />
+            <Checkbox
+              flag={useLowercase}
+              text="Использовать строчные буквы"
+              onChange={(e) => setUseLowercase(e.target.checked)}
+            />
+
+            <Checkbox
+              flag={useNumbers}
+              text="Использовать цифры"
+              onChange={(e) => setUseNumbers(e.target.checked)}
+            />
+
+            <Checkbox
+              flag={useSymbols}
+              text="Использовать символы: %, *, ), ?, @, #, $, ~"
+              onChange={(e) => setUseSymbols(e.target.checked)}
+            />
+
+            <Checkbox
+              flag={avoidRepetition}
+              text="Избегать повторения символов"
+              onChange={(e) => setAvoidRepetition(e.target.checked)}
+            />
           </div>
 
           <button onClick={generatePassword} className={styles.generateButton}>
@@ -94,21 +86,21 @@ const PasswordGeneratorForm: React.FC = () => {
         </div>
 
         <div className={styles.results}>
-          <h3>Результаты</h3>
+          <span className={styles.label}>Результаты</span>
           {generatedPasswords.map((password, index) => (
-            <div key={index} className={styles.passwordItem}>
+            <div key={index}  className={styles.passwordItem}>
               {password}
-              <button
+              <div
                 className={styles.copyButton}
                 onClick={() => navigator.clipboard.writeText(password)}
               >
-                📋
-              </button>
+                <Copy className={styles.copyButton} />
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
