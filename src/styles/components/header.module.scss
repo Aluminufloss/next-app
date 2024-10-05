@@ -30,6 +30,13 @@
   font-weight: 400;
 
   color: $gray-400;
+
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
 }
 
 .user {
