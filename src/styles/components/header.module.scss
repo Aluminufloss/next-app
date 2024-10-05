@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
 
@@ -13,11 +13,12 @@
   padding: 20px 180px;
 
   background: #0A0A0AE5;
+  z-index: 100;
 }
 
 .linksGroup {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 32px;
 }
@@ -29,4 +30,27 @@
   font-weight: 400;
 
   color: $gray-400;
+
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  color: $white;
 }
