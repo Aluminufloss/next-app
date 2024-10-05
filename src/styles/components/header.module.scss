@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 20px 180px;
+
+  background: #0A0A0AE5;
+}
+
+.linksGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  font-size: 14px;
+  line-height: 20px;
+
+  font-weight: 400;
+
+  color: $gray-400;
+}
