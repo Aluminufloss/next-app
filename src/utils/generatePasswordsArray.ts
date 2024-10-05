@@ -19,7 +19,7 @@ const generatePasswordsArray = (options: OptionsType): string[] => {
     .fill(null)
     .map(() =>
       generateRandomPassword({
-        length: options.length,
+        length: options.length || 8,
         charset,
         avoidRepetition: options.avoidRepetition,
       })
