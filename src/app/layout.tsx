@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
+import "@/styles/globals.scss";
+import styles from '@/styles/layout.module.scss'
+
 const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -14,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={styles.container} lang="en">
       <body className={inter.className}>
         {children}
       </body>
