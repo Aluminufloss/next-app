@@ -87,3 +87,22 @@
     transform: scale(0.98);
   }
 }
+
+@include media(desktop) {
+  .container {
+    max-width: initial;
+
+    width: 100%;
+  }
+
+  .link {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@include media(mobile) {
+  .linksGroup {
+    flex-direction: column;
+  }
+}
