@@ -24,3 +24,9 @@
 
   pointer-events: none;
 }
+
+@include media(extra-desktop) {
+  .background {
+    left: 0;
+  }
+}

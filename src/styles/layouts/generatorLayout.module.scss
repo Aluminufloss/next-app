@@ -8,4 +8,24 @@
   height: 100vh;
 
   padding: 0 180px;
+
+  @include media(extra-ld) {
+    padding: 0 90px;
+  }
+
+  @include media(ld) {
+    padding: 0 60px;
+  }
+
+  @include media(extra-desktop) {
+    padding: 0 30px;
+  }
+
+  @include media(desktop) {
+    margin-top: 132px;
+  } 
+
+  @include media(mobile) {
+    margin-top: 160px;
+  } 
 }
