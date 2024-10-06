@@ -15,10 +15,8 @@ const handleOperators = (options: OptionsType) => {
 
   if (options.operator === "%") {
     const calculatedResult = inputValue / 100;
-
     options.setDisplayValue(String(calculatedResult));
     options.setWaitingForNewValue(true);
-
     return;
   } else if (options.operator === "+/-") {
     const calculatedResult = -inputValue;
@@ -36,12 +34,12 @@ const handleOperators = (options: OptionsType) => {
       operator: options.operator,
     });
 
-    options.setDisplayValue(String(calculatedResult));
+    options.setDisplayValue(String(calculatedResult)); 
     options.setPreviousValue(String(calculatedResult));
   }
 
   options.setOperator(options.operator);
-  options.setWaitingForNewValue(true);
+  options.setWaitingForNewValue(true); 
 };
 
 export default handleOperators;

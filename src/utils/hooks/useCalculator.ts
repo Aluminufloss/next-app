@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import calculate from "../calculate";
+import formatResult from "../formatResult";
 import handleOperators from "../handleOperators";
 
 import useCalculatorInput from "./useCalculatorInput";
@@ -20,7 +21,7 @@ const useCalculator = () => {
   } = useCalculatorInput({
     waitingForNewValue,
     setWaitingForNewValue,
-    setResult
+    setResult,
   });
 
   const performCalculation = () => {
@@ -31,8 +32,9 @@ const useCalculator = () => {
         operator,
       });
 
-      setResult(String(finalResult));
-      setDisplayValue(String(finalResult));
+      const formattedResult = formatResult(finalResult);
+      setResult(formattedResult); 
+      setDisplayValue(formattedResult);
       setPreviousValue(null);
       setOperator(null);
       setWaitingForNewValue(true);
@@ -71,7 +73,11 @@ const useCalculator = () => {
     };
   }, []);
 
-  const currentExpression = `${previousValue ?? ""} ${operator ?? ""} ${waitingForNewValue ? "" : displayValue}`;
+  const currentExpression = previousValue
+    ? `${formatResult(previousValue)} ${operator ?? ""}` 
+    : result
+    ? `${formatResult(result)}` 
+    : "";
 
   return {
     displayValue,

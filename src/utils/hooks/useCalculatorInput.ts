@@ -10,6 +10,10 @@ const useCalculatorInput = (options: OptionsType) => {
   const [displayValue, setDisplayValue] = useState<string>("0");
 
   const inputDigit = (digit: string) => {
+    if (displayValue.length >= 12 && !options.waitingForNewValue) {
+      return;
+    }
+
     if (options.waitingForNewValue) {
       setDisplayValue(digit);
       options.setWaitingForNewValue(false);

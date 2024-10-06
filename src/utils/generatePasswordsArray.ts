@@ -14,7 +14,7 @@ type OptionsType = {
 
 const generatePasswordsArray = (options: OptionsType): string[] => {
   const charset = getCharset(options.flags);
-
+  
   const passwordArray = Array(4)
     .fill(null)
     .map(() =>
