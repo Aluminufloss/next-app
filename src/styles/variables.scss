@@ -15,3 +15,11 @@ $button-default: #1E1F21;
 $button-default-hover: #464545;
 $button-primary-hover: #f37e54;
 $button-secondary-hover: #2b2c2e;
+
+$media-values: (
+  mobile: 480px,
+  desktop: 720px,
+  extra-desktop: 940px,
+  ld: 1090px,
+  extra-ld: 1435px
+);
