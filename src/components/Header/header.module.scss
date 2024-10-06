@@ -41,8 +41,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 8px;
+  
+  min-width: 0px;
 }
 
 .username {
@@ -51,4 +52,9 @@
   line-height: 20px;
 
   color: $white;
+
+  max-width: 160px;        
+  white-space: nowrap;     
+  overflow: hidden;         
+  text-overflow: ellipsis;  
 }
