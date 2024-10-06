@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 
-import styles from "@/styles/generatorLayout.module.scss"
+import styles from "@/styles/layouts/generatorLayout.module.scss";
 
 const GeneratorLayout = ({
   children,

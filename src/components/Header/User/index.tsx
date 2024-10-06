@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import avatar from '@/assets/avatar.png';
 
-import styles from '@/styles/components/header.module.scss';
+import styles from '../header.module.scss';
 
 type PropsType = {
   userName: string;

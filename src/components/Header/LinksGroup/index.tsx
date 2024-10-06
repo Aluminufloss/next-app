@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import styles from '@/styles/components/header.module.scss';
+import styles from '../header.module.scss';
 
 const LinksGroup: React.FC = () => {
   return (

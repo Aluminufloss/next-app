@@ -5,7 +5,9 @@ import Link from "next/link";
 
 import useStore from "@/store";
 
-import styles from "@/styles/components/nameForm.module.scss";
+import styles from "./nameForm.module.scss";
+
+import Input from "../Input";
 
 const NameSelectForm: React.FC = () => {
   const [inputName, setInputName] = useState("");
@@ -13,14 +15,14 @@ const NameSelectForm: React.FC = () => {
 
   const handleSaveName = () => {
     if (inputName.trim()) {
-      localStorage.setItem("name", inputName); 
-      setName(inputName); 
-      setInputName('');
+      localStorage.setItem("name", inputName);
+      setName(inputName);
+      setInputName("");
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSaveName();
     }
   };
@@ -29,13 +31,12 @@ const NameSelectForm: React.FC = () => {
     <div className={styles.container}>
       <h2 className={styles.text}>Начать</h2>
       <label className={styles.label}>Ваше имя</label>
-      <input
-        className={styles.input}
+      <Input
         type="text"
         placeholder="Как вас зовут?"
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
-        onKeyDown={handleKeyDown}  
+        onKeyDown={handleKeyDown}
       />
       <span className={styles.separator} />
       <div className={styles.linksGroup}>

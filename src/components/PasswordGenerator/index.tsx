@@ -4,12 +4,13 @@ import { useState } from "react";
 
 import generatePasswordsArray from "@/utils/generatePasswordsArray";
 
-import styles from "@/styles/components/passwordGeneratorForm.module.scss";
+import styles from "./passwordGeneratorForm.module.scss";
 
 import Title from "../Title";
 import Checkbox from "./Checkbox";
 
-import Copy from '@/assets/svg/copy.svg';
+import Copy from "@/assets/svg/copy.svg";
+import Input from "../Input";
 
 const PasswordGeneratorForm: React.FC = () => {
   const [length, setLength] = useState<number>(8);
@@ -40,13 +41,13 @@ const PasswordGeneratorForm: React.FC = () => {
       <div className={styles.form}>
         <div className={styles.settings}>
           <span className={styles.label}>Длина пароля</span>
-          <input
+          <Input
             type="number"
             value={length}
             onChange={(e) => setLength(parseInt(e.target.value))}
             placeholder="Введите число"
-            className={styles.input}
             min={1}
+            max={100}
           />
 
           <div className={styles.checkboxes}>
@@ -88,7 +89,7 @@ const PasswordGeneratorForm: React.FC = () => {
         <div className={styles.results}>
           <span className={styles.label}>Результаты</span>
           {generatedPasswords.map((password, index) => (
-            <div key={index}  className={styles.passwordItem}>
+            <div key={index} className={styles.passwordItem}>
               {password}
               <div
                 className={styles.copyButton}
