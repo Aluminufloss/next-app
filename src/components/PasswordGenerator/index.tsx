@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 
 import generatePasswordsArray from "@/utils/generatePasswordsArray";
 
@@ -22,6 +22,9 @@ const PasswordGeneratorForm: React.FC = () => {
   const [generatedPasswords, setGeneratedPasswords] = useState<string[]>([]);
 
   const generatePassword = () => {
+    if (!useUppercase && !useLowercase && !useNumbers && !useSymbols) {
+      return;
+    }
     const array = generatePasswordsArray({
       length,
       avoidRepetition,
