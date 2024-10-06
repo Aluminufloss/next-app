@@ -21,8 +21,8 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.container}>
-      <Logo />
-      <LinksGroup />
+      <Logo /> 
+      <LinksGroup /> 
       <User userName={name} />
     </header>
   )

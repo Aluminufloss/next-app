@@ -58,3 +58,45 @@
   overflow: hidden;         
   text-overflow: ellipsis;  
 }
+
+@include media(ld) {
+  .container {
+    padding: 20px 30px;
+  }
+
+  .linksGroup {
+    gap: 16px;
+  }
+
+  .username {
+    max-width: 120px;
+  }
+}
+
+@include media(desktop) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .user {
+    order: 1;
+  }
+
+  .linksGroup {
+    width: 100%;
+    order: 2;
+    margin-top: 16px;
+  }
+}
+
+
+@include media(mobile) {
+  .link {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .linksGroup {
+    gap: 10px;
+  }
+}

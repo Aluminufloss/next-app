@@ -1,9 +1,7 @@
 "use client";
 
 import styles from "./calculator.module.scss";
-
 import Title from "../Title";
-
 import useCalculator from "@/utils/hooks/useCalculator";
 import handleOperators from "@/utils/handleOperators";
 
@@ -43,10 +41,8 @@ const Calculator: React.FC = () => {
       />
       <div className={styles.calculator}>
         <div className={styles.display}>
-          <div className={styles.tempResult}>{result}</div>
-          <div className={styles.expression}>
-            {currentExpression.trim() || result}
-          </div>
+          <div className={styles.tempResult}>{currentExpression}</div>
+          <div className={styles.expression}>{displayValue}</div>
         </div>
         <div className={styles.buttons}>
           <button onClick={clearDisplay} className={styles.operatorSecondary}>
