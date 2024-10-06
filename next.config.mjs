@@ -11,7 +11,10 @@ const nextConfig = {
     return config;
   },
   sassOptions: {
-    prependData: `@import "./src/styles/variables.scss";`,
+    prependData: `
+    @import "./src/styles/variables.scss";
+    @import "./src/styles/_mixins.scss";
+  `,
   },
 };
 

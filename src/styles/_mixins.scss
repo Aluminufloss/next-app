@@ -1,0 +1,10 @@
+@mixin media($breakpoint) {
+  @if map-has-key($media-values, $breakpoint) {
+    $max-width: map-get($media-values, $breakpoint);
+    @media (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint #{$breakpoint} not found in $media-values!";
+  }
+}
