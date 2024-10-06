@@ -1,8 +1,11 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
 import "@/styles/globals.scss";
-import styles from '@/styles/layout.module.scss'
+import styles from "@/styles/layouts/layout.module.scss";
+
+import Background from "@/assets/lights.png";
 
 const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
@@ -19,6 +22,11 @@ export default function RootLayout({
   return (
     <html className={styles.container} lang="en">
       <body className={inter.className}>
+        <Image 
+          src={Background}
+          alt="Background"
+          className={styles.background}
+        />
         {children}
       </body>
     </html>
