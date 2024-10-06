@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.calculator {
+  flex: 1;
+  max-width: 428px;
+
+  border: 1px solid $gray-800;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background-color: $gray-950;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+
+  background-color: $gray-950;
+
+  padding: 16px 24px;
+}
+
+.tempResult {
+  min-height: 48px;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+
+  color: $token-secondary;
+}
+
+.expression {
+  min-height: 59px;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 58.09px;
+
+  color: $token-primary;
+}
+
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  padding: 16px 24px;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 80px;
+    max-width: 83px;
+
+    border-radius: 20px;
+    border: none;
+
+    padding: 20px;
+
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+
+    background-color: $button-default;
+
+    color: $token-primary;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $button-default-hover;
+    }
+
+    &.operator {
+      background-color: $button-primary;
+
+      &:hover {
+        background-color: $button-primary-hover;
+      }
+    }
+
+    &.operatorSecondary {
+      background-color: $button-secondary;
+
+      &:hover {
+        background-color: $button-secondary-hover;
+      }
+    }
+
+    &.zero {
+      max-width: 182px;
+      grid-column: span 2;
+    }
+  }
+}

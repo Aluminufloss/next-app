@@ -1,7 +1,6 @@
 import { ChangeEvent } from "react";
 
-import styles from "@/styles/components/checkBox.module.scss";
-
+import styles from "./checkBox.module.scss";
 type PropsType = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   flag: boolean;
