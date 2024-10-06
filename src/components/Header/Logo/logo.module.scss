@@ -1,0 +1,14 @@
+.container {
+  height: 24px;
+}
+
+@include media(mobile) {
+  .logo {
+    width: 114px;
+    height: 20px;
+  }
+
+  .container {
+    height: 20px;
+  }
+}
