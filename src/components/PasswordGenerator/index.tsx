@@ -43,11 +43,9 @@ const PasswordGeneratorForm: React.FC = () => {
           <span className={styles.label}>Длина пароля</span>
           <Input
             type="number"
-            value={length}
+            value={length || ""}
             onChange={(e) => setLength(parseInt(e.target.value))}
             placeholder="Введите число"
-            min={1}
-            max={100}
           />
 
           <div className={styles.checkboxes}>
@@ -89,14 +87,12 @@ const PasswordGeneratorForm: React.FC = () => {
         <div className={styles.results}>
           <span className={styles.label}>Результаты</span>
           {generatedPasswords.map((password, index) => (
-            <div key={index} className={styles.passwordItem}>
-              {password}
-              <div
+            <div key={index} className={styles.passwordContainer}>
+              <span className={styles.passwordItem}>{password}</span>
+              <Copy
                 className={styles.copyButton}
                 onClick={() => navigator.clipboard.writeText(password)}
-              >
-                <Copy className={styles.copyButton} />
-              </div>
+              />
             </div>
           ))}
         </div>
