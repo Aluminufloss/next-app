@@ -13,6 +13,10 @@ type UnaryOperators = {
 };
 
 const calculate = (options: OptionsType): number => {
+  if (!options.prev && !options.next) {
+    return 0;
+  }
+
   const binaryOperators: BinaryOperators = {
     "+": (prev: number, next: number) => prev + next,
     "-": (prev: number, next: number) => prev - next,
